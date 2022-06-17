@@ -1,6 +1,7 @@
 const express = require('express');
 require('dotenv').config();
 const cors = require('cors');
+const { socketController } = require('../sockets/socket.controller');
 
 class Server {
     
@@ -36,13 +37,7 @@ class Server {
     }
     
     sockets() {
-        this.io.on('connection', socket => { 
-            console.log(`Client ${ socket.id } connected..`);
-
-            socket.on('disconnect', () => {
-                console.log(`Client ${ socket.id } disconnected.. `);
-            });
-        });
+        this.io.on( 'connection', socketController);
     }
 
     listen() {

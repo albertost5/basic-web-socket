@@ -22,7 +22,22 @@
         <span id="lblOffline" class="text-danger">Offline</span>
     </p>
 
+    <div class="row">
+        <div class="col">
+            <input type="text" id="txtBox" class="form-control">
+        </div>
+        <div class="col">
+            <button id="btnSend" class="btn btn-primary">
+                Send
+            </button>
+        </div>
+    </div>
+
+
+
+    <!-- script needed to create sockets -->
     <script src="./socket.io/socket.io.js"></script>
+    <!-- script with the socket's logic -->
     <script src="./js/socket-client.js"></script>
 </body>
 
